@@ -1,1 +1,22 @@
+@startuml
+title Diagrama de Contexto - Plataforma Educacional 
 
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+AddElementTag("v1.0", $borderColor="#d73027")
+AddElementTag("v1.1", $fontColor="#d73027")
+AddElementTag("backup", $fontColor="orange")
+
+AddRelTag("backup", $textColor="orange", $lineColor="orange", $lineStyle = DashedLine())
+
+Person(aluno, "Aluno", )
+Person(professor, "Professor",)
+Person(admin, "Administrator", $tags="v1.1")
+Container(spa, "Plataforma educacional", )
+
+Rel(aluno, spa, "Estuda, faz quizzes", )
+Rel(professor, spa, "Cria conteúdos e avaliações",)
+Rel(admin, spa, "Supervisiona usúarios e relatórios", )
+
+
+@enduml
